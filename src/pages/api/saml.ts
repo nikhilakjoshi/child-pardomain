@@ -48,7 +48,7 @@ export default function handler(
       .getTime()
       .toString(
         36,
-      )}; domain=child-pardomain.vercel.app; path=/banking; Secure; HttpOnly; SameSite=None;`,
+      )}; domain=.vercel.app; path=/banking; Secure; HttpOnly; SameSite=None;`,
   );
   res.status(200).json({ samlToken: token() });
 }
