@@ -48,7 +48,7 @@ export default function handler(
       .getTime()
       .toString(
         36,
-      )}; domain=vercel.app;Secure;Expires=Sat, 01 Dec 2023 00:00:00 GMT;HttpOnly;`,
+      )}; domain=vercel.app;Secure;Expires=Sat, 01 Dec 2023 00:00:00 GMT;HttpOnly;SameSite=None;`,
   );
   res.status(200).json({ samlToken: token() });
 }
