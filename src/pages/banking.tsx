@@ -24,7 +24,7 @@ export default function Banking(
 ) {
   const sayHello = async () => {
     const res = await fetch("/api/hello");
-    const data = await res.json();
+    const data = (await res.json()) as { message: string };
     return data;
   };
   useEffect(() => {
