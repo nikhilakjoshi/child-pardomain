@@ -5,6 +5,7 @@ import type {
 } from "next";
 import Head from "next/head";
 import { Rubik } from "next/font/google";
+import { useEffect } from "react";
 
 const font = Rubik({
   subsets: ["latin-ext"],
@@ -21,6 +22,16 @@ export const getServerSideProps = (context: GetServerSidePropsContext) => {
 export default function Banking(
   props: InferGetServerSidePropsType<typeof getServerSideProps>,
 ) {
+  const sayHello = async () => {
+    const res = await fetch("/api/hello");
+    const data = await res.json();
+    return data;
+  };
+  useEffect(() => {
+    sayHello().then((data) => {
+      console.log("data: ", data);
+    });
+  }, []);
   return (
     <>
       <Head>
