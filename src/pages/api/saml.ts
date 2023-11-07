@@ -46,7 +46,9 @@ export default function handler(
     "Set-Cookie",
     `token=${new Date()
       .getTime()
-      .toString(36)}; domain=.child-pardomain.vercel.app; Secure; HttpOnly;`,
+      .toString(
+        36,
+      )}; domain=.child-pardomain.vercel.app; Secure; HttpOnly; SameSite=None;`,
   );
   res.status(200).json({ samlToken: token() });
 }
