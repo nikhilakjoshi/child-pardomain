@@ -48,7 +48,7 @@ export default function handler(
       .getTime()
       .toString(
         36,
-      )}; domain=.vercel.app; path=/banking; Secure; HttpOnly; SameSite=None;`,
+      )}; domain=vercel.app; Secure; Expires=Sat, 01 Dec 2023 00:00:00 GMT;`,
   );
   res.status(200).json({ samlToken: token() });
 }
